@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: devaasirvatham/devops-app
+  tag: v1
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: devops-app.local
+      paths:
+        - path: /
+          pathType: Prefix
+
+
