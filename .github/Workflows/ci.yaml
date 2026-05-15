@@ -65,7 +65,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: devaasirvatham/devops-app:${{ github.run_id }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-app:${{ github.run_id }}
 
   update-k8s-manifest:
     runs-on: ubuntu-latest
@@ -90,4 +90,5 @@ jobs:
           git add k8s/deployment.yaml
           git commit -m "Update image tag to ${{ github.run_id }}" || echo "No changes to commit"
           git push
+
 
