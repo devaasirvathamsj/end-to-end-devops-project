@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: devaasirvatham/devops-app
-  tag: v1
+  tag: "25956797404"
   pullPolicy: IfNotPresent
 
 service:
