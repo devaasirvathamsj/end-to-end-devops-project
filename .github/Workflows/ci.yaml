@@ -80,7 +80,7 @@ jobs:
 
       - name: Update image tag in deployment
         run: |
-          sed -i 's|image: .*|image: devaasirvatham/devops-app:${{ github.run_id }}|' k8s/deployment.yaml
+          sed -i 's/tag: .*/tag: "${{github.run_id}}"/' helm/go-web-app-chart/values.yaml
 
       - name: Commit and Push changes
         run: |
